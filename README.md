@@ -1,7 +1,7 @@
 # Rubicon!
 
 ### A Simple Game Tracker
-From organizing a your personal games library to organizing a weekend games conference, Rubicon! has you covered.
+From organizing a your personal games library to organizing a weekend games conference, Rubicon! has you covered.  Or it will, anyhow: this is VERY MUCH in development.  Feel free to send in a PR if you want to pitch in.
 
 #### Planned Functionality
 1. Plan everything from a small game night with friends to a multi-day, multi-group marathon
