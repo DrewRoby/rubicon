@@ -15,8 +15,8 @@ class Player_Group(db.Model):
     __tablename__ = 'PLAYER_GROUP'
 
     PLAYER_P_GROUP_ID = db.Column(db.Integer, primary_key=True)
-    P_GROUP_ID = db.Column(db.Integer)
     PLAYER_ID = db.Column(db.Integer, ForeignKey(PLAYER.PLAYER_ID), nullable = False)
+    P_GROUP_ID = db.Column(db.Integer)
 
 
 class Game(db.Model):
