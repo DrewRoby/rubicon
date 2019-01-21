@@ -19,7 +19,7 @@ db = SQLAlchemy(app)
 @app.before_first_request
 def setup():
     # Recreate database each time for demo
-    db.drop_all()
+    # db.drop_all()
     db.create_all()
 
 #TODO refactor for rubicon
@@ -53,8 +53,8 @@ def list_pets():
 
 @app.route("/")
 def home():
-    return "Welcome!"
+    return render_template('home.html')
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=Trues)
