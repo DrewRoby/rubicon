@@ -23,6 +23,8 @@ def setup():
     db.create_all()
 
 #TODO refactor for rubicon
+# Get navbar to work... wherefore dropdown?[]
+# Add routes for existing templates (or rather nav options)
 @app.route("/send", methods=["GET", "POST"])
 def send():
     if request.method == "POST":
@@ -57,4 +59,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(debug=Trues)
+    app.run(debug=True)
