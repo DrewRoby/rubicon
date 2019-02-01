@@ -6,21 +6,21 @@ from flask import (
     jsonify,
     request)
 
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or "sqlite:///db/db.sqlite"
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
 
 
-@app.before_first_request
-def setup():
-    # Recreate database each time for demo
-    # db.drop_all()
-    db.create_all()
+# @app.before_first_request
+# def setup():
+#     # Recreate database each time for demo
+#     # db.drop_all()
+#     db.create_all()
 
 #TODO refactor for rubicon
 # Get navbar to work... wherefore dropdown?[]
