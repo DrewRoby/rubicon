@@ -1,3 +1,4 @@
+# Describes the data model of the application in SQL
 from .app import db
 
 class Player(db.Model):
@@ -40,6 +41,8 @@ class Con(db.Model):
 
     CON_ID = db.Column(db.Integer, primary_key=True)
     CON_NAME = db.Column(db.String(64))
+    CON_OWNER = db.Column(db.Integer, ForeignKey(PLAYER.PLAYER_ID), nullable=False)
+    CON_P_GROUP_ID = db.Column(db.Integer, nullable=False) #COMPOSITE KEY OF CON_ID AND P_GROUP_ID
     CON_BEGIN = db.Column(db.DateTime)
     CON_END = db.Column(db.DateTime)
 

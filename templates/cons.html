@@ -1,0 +1,6 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+//pseudosql<br><br>
+select con_name from cons where getdate() between con_begin and con_end
+{% endblock %}

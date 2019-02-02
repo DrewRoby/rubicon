@@ -1,3 +1,6 @@
+{% extends 'layout.html' %}
+
+{% block body %}
 <form method="POST" action="/send">
 
     <label for="inputName">Name</label>
@@ -8,3 +11,4 @@
 
     <input type="submit" value="submit">
 </form>
+{% endblock %}

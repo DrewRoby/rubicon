@@ -15,6 +15,16 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 
 
 #### Current Worklist
-* Get navbar in layout.html to work... whither dropdown? (update 2/2: it has something to do with the Popper library that Bootstrap uses.  It's weird.)
-* Add routes to app.py for existing templates (or rather, existing nav options)
-* Download postgres and link it up to the app on the backend.  Data model already exists in models.py.  
+* DONE Get navbar in layout.html to work... whither dropdown? (update 2/2: it has something to do with the Popper library that Bootstrap uses.  It's weird.)
+* DONE Add routes to app.py for existing templates (or rather, existing nav options)
+* Work through process of adding or joining a game
+* Profile form
+* New con form
+* /gamenav route needs to work for adding or joining.  Or just need to refactor into 2 different methods for adding a new game session vs. joining a game in progress.
+* /gamenav as implemented should be /seshnav
+* Library mgmt routes
+* Oh yeah, uh... multiple users... so / route needs to land at login page and/or check for logged-in cookie.  Hopefully this is covered in the Very Helpful Resource below.
+* Wire up postgres to the app on the backend.  Data model exists in models.py.  
+
+<br><br>
+[Very helpful resource](https://www.youtube.com/watch?v=zRwy8gtgJ1A&list=PLillGF-RfqbbbPz6GSEM9hLQObuQjNoj_)
