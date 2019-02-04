@@ -24,7 +24,8 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 * /gamenav as implemented should be /seshnav
 * Library mgmt routes
 * Oh yeah, uh... multiple users... so / route needs to land at login page and/or check for logged-in cookie.  Hopefully this is covered in the Very Helpful Resource below.
-* Wire up postgres to the app on the backend.  Data model exists in models.py.  
+* Wire up postgres to the app on the backend.  Data model exists in models.py. 
+* Redesign data model around [RedisGraph](https://oss.redislabs.com/redisgraph/) or some other graph db? You know, for kicks? 
 
 <br><br>
 [Very helpful resource](https://www.youtube.com/watch?v=zRwy8gtgJ1A&list=PLillGF-RfqbbbPz6GSEM9hLQObuQjNoj_)
