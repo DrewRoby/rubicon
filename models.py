@@ -7,6 +7,8 @@ class Player(db.Model):
     PLAYER_ID = db.Column(db.Integer, primary_key=True)
     PLAYER_NAME = db.Column(db.String(64))
     PLAYER_USER_TAG = db.Column(db.String(64))
+    EMAIL = db.Column(db.String(64))
+    REGISTER_DATE = db.Column(db.DateTime) #set default value to current ts?
 
     def __repr__(self):
         return '<Player %r>' % (self.usertag)
