@@ -1,5 +1,6 @@
 # Describes the data model of the application in SQL
-from .app import db
+# from .app import db
+from django.db import models
 
 class Player(db.Model):
     __tablename__ = 'PLAYER'
@@ -10,8 +11,8 @@ class Player(db.Model):
     EMAIL = db.Column(db.String(64))
     REGISTER_DATE = db.Column(db.DateTime) #set default value to current ts?
 
-    def __repr__(self):
-        return '<Player %r>' % (self.usertag)
+    def __str__(self):
+        return self.usertag
 
 
 class Player_Group(db.Model):
@@ -20,6 +21,7 @@ class Player_Group(db.Model):
     PLAYER_P_GROUP_ID = db.Column(db.Integer, primary_key=True)
     PLAYER_ID = db.Column(db.Integer, ForeignKey(PLAYER.PLAYER_ID), nullable = False)
     P_GROUP_ID = db.Column(db.Integer)
+
 
 
 class Game(db.Model):
@@ -35,8 +37,8 @@ class Game(db.Model):
     GAME_TYPE = db.Column(db.String(64))
     PLATFORM = db.Column(db.String(64))
 
-    def __repr__(self):
-        return '<Players %r>' % (self.nickname)
+    def __str__(self):
+        return self.GAME_NAME
 
 class Con(db.Model):
     __tablename__ = 'CON'
@@ -48,6 +50,9 @@ class Con(db.Model):
     CON_BEGIN = db.Column(db.DateTime)
     CON_END = db.Column(db.DateTime)
 
+    def __str__(self):
+        return self.CON_NAME
+
 class Session(db.Model):
     __tablename__ = 'SESSION'
 
@@ -57,6 +62,7 @@ class Session(db.Model):
     P_GROUP_ID = db.Column(db.Integer)
     SESSION_BEGIN = db.Column(db.DateTime)
     SESSION_END = db.Column(db.DateTime)
+    
 
 class Round(db.Model):
     __tablename__ = 'ROUND'

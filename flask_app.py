@@ -1,4 +1,4 @@
-# import necessary libraries
+# Shared Libraries
 import os
 from flask import (
     Flask,
@@ -15,22 +15,12 @@ from flask import (
     # TODO ...not working?
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
-
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','') or "sqlite:///db/db.sqlite"
 
-# db = SQLAlchemy(app)
-
-
-
-# @app.before_first_request
-# def setup():
-#     # Recreate database each time for demo
-#     # db.drop_all()
-#     db.create_all()
 
 #TODO 
 # Finish /seshnav logic
@@ -67,20 +57,6 @@ def add_game():
     # Any rate, want to insert new session for current con, user
     # allow invites
     return render_template('seshnav.html')
-
-@app.route("/send", methods=["GET", "POST"])
-def send():
-    if request.method == "POST":
-        nickname = request.form["nickname"]
-        age = request.form["age"]
-
-        pet = Pet(nickname=nickname, age=age)
-        db.session.add(pet)
-        db.session.commit()
-
-        return "Thanks for the form data!"
-
-    return render_template("form.html")
 
 
 @app.route("/assets/<path:path>")
