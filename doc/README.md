@@ -29,4 +29,4 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 
 
 #### Why?
-I had a long weekend of gaming with some friends, and along with annoyance at some coordination issues (who's bringing what game? What's our agenda?), I was frustrated that we didn't have any metrics on what everyone thought of the games they played.  "Well," I thought, "I know how to fix this..."
+I had a long weekend of gaming with some friends, and along with standard coordination issues (who's bringing what game? What's our agenda?), I was interested in seeing metrics on what everyone thought of the games they played, how long they played them, how many sessions, &c.  "Well," I thought, "I know how to fix this..."
