@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+*.db
+*.egg
+*.sqlite3
+.DS_Store
+.coverage
+local_settings.py
+/static
+__pycache__
