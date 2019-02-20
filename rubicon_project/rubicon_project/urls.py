@@ -20,4 +20,5 @@ urlpatterns = [
     path('', include('rubicon_app.urls', namespace='rubicon_app')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+    path('session/', include('session.urls')),
 ]

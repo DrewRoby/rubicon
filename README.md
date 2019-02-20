@@ -15,10 +15,9 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 
 
 ### Current Worklist
-#### Complete
-* Get navbar in layout.html to work... whither dropdown? (update 2/2: it has something to do with the Popper library that Bootstrap uses.  It's weird.)
-* Add routes to app.py for existing templates (or rather, existing nav options)
-* /gamenav as implemented should be /seshnav
+#### Latest Changes
+* 2/20 refactor into properly named apps (e.g. session vs rubicon_app)
+* Error when running createsuperuser: `AttributeError: 'AdminSite' object has no attribute 'Register'`
 
 #### High Priority
 * Support multiple users. / route needs to land at login page and/or check for logged-in cookie.  Implementing with some help from this [Very helpful resource](https://www.youtube.com/watch?v=D6esTdOLXh4).
@@ -35,6 +34,17 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 #### Low Priority
 * Redesign data model around [RedisGraph](https://oss.redislabs.com/redisgraph/) or some other graph db? You know, for kicks?
 
+#### Complete
+* Replace bootstrap with bulma
+* Add routes to app.py for existing templates (or rather, existing nav options)
+* /gamenav as implemented should be /seshnav
 
 #### Why?
 I had a long weekend of gaming with some friends, and along with standard coordination issues (who's bringing what game? What's our agenda?), I was interested in seeing metrics on what everyone thought of the games they played, how long they played them, how many sessions, &c.  "Well," I thought, "I know how to fix this..."
+
+#### Dev Setup
+* SQLite DB does not persist from session to session, so:
+* Run `python manage.py makemigrations`
+* Run `python manage.py migrate`
+* Run `python manage.py createsuperuser --name='ChosenOne' --email='PartyingWithAnimals@TheDesert.com'`
+* The /admin route will now work properly.  Log in, hang out, blow your mind, have yourself a gas.
