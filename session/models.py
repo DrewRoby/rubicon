@@ -11,7 +11,7 @@ class Player(models.Model):
 
     # def __str__(self):
     #     return self.usertag
-    # ^ Do I need these? ^
+    
 
 
 class Player_Group(models.Model):
