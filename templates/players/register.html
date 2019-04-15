@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero is-medium is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Join the Fun
+            </h1>
+            <!-- Alerts -->
+            {% include 'partials/_alerts.html' %}
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                    <label class="label">First Name</label>
+                    <div class="control">
+                      <input class="input" type="text" name='first_name' required>
+                      </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Last Name</label>
+                    <div class="control">
+                        <input class="input" type="text" name='last_name' required>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" name='email' required>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" name='username' required>
+                        </span>
+                  </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" name='password' required>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Again with the password</label>
+                    <div class="control">
+                        <input class="input" type="password" name='password2' placeholder="Oy, vey" required>
+                        </span>
+                    </div>
+                </div>
+                <div class="control">
+                        <button type="submit" class='button is-dark'>Sign Me Up</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

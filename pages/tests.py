@@ -1,3 +1,4 @@
 from django.test import TestCase
 
-# Create your tests here.
+# What happens to the forum, player groups, game history, &c. when you delete a player?
+# 

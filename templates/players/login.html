@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero is-medium is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Get Your Rubic On
+            </h1>
+            <!-- Alerts -->
+            {% include 'partials/_alerts.html' %}
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="field">
+                  <label class="label">Username</label>
+                  <div class="control">
+                    <input class="input" type="text" name="username">
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                          <input class="input" type="password" name="password">
+                          </span>
+                        </div>
+                      </div>
+                <div class="control">
+                        <button type="submit" class='button is-dark'>Punch It, Chewie! (TM)</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

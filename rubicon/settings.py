@@ -116,8 +116,11 @@ WSGI_APPLICATION = 'rubicon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rubicondb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost'
     }
 }
 
@@ -167,6 +170,11 @@ STATICFILES_DIRS = [
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'is-danger'
+}
 
 # More Spirit Forum Stuff
 HAYSTACK_CONNECTIONS = {
@@ -175,3 +183,4 @@ HAYSTACK_CONNECTIONS = {
         'PATH': os.path.join(BASE_DIR, 'st_search'),
     },
 }
+

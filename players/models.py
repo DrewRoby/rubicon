@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # class Profile(models.Model):
 
@@ -21,5 +22,5 @@ class Player_Group(models.Model):
     __tablename__ = 'PLAYER_GROUP'
 
     PLAYER_P_GROUP_ID = models.CharField(max_length=500)
-    PLAYER_ID = models.Column(models.Integer, ForeignKey(PLAYER.PLAYER_ID), nullable = False)
-    P_GROUP_ID = models.Column(models.Integer)
+    username = models.ForeignKey(User, on_delete=models.PROTECT)
+    P_GROUP_ID = models.IntegerField()
