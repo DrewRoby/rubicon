@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from .models import Library
 
 
 
@@ -57,8 +58,15 @@ def logout(request):
     return render(request,'index')
 
 def dashboard(request):
-    
-    context = {
+    # link current user to library
+    username = request.POST['username']
+    password = request.POST['password']
 
+    user = auth.authenticate(username=username, password=password)
+    libgames = Library.filter(username=user.username)
+
+
+    context = {
+         "numgames": len(libgames)
     }
     return render(request,'players/dashboard.html',context)

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from games import Game
 
 # class Profile(models.Model):
 
@@ -19,8 +20,13 @@ from django.contrib.auth.models import User
 # Is this the right place to put the player group?  Or just as good a place as any?
 # Or should I leverage django's built-in groups?
 class Player_Group(models.Model):
-    __tablename__ = 'PLAYER_GROUP'
-
     PLAYER_P_GROUP_ID = models.CharField(max_length=500)
     username = models.ForeignKey(User, on_delete=models.PROTECT)
     P_GROUP_ID = models.IntegerField()
+
+class Library(models.Model):
+    class Meta:
+        unique_together = ((username,game_id),)
+
+    username = models.ForeignKey(User, on_delete=models.PROTECT)
+    game_id = models.ForeignKey(Game, on_delete=models.PROTECT)
