@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from .models import Library
-
+from cons.models import Con
+from datetime import datetime as dt
 
 
 def register(request):
@@ -28,7 +29,14 @@ def register(request):
                 else:
                     user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name)
                     auth.login(request, user)
+                    ConName = f"{username}'s Own Private Idaho"
+                    ConTag = "Your personal game history.  Invite others to begin playing."
+                    ConOwner = username
+                    Begin = dt.now()
+                    End = None
+                    Con.objects.create(CON_NAME=ConName, CON_TAGLINE=ConTag, CON_OWNER=ConOwner, CON_BEGIN=Begin, CON_END=End, CREATE_DATE=Begin, IS_PRIVATE=True)
                     messages.success(request, 'Welcome to Rubicon!')
+
                     return redirect('dashboard')
         else:
             messages.error(request, 'Passwords do not match')
@@ -58,15 +66,18 @@ def logout(request):
     return render(request,'index')
 
 def dashboard(request):
-    # link current user to library
-    username = request.POST['username']
-    password = request.POST['password']
+    # check user is logged in
+    # if not request.user:
+    #     return redirect('login.html')
 
-    user = auth.authenticate(username=username, password=password)
-    libgames = Library.filter(username=user.username)
+    # link current user to library
+    user = request.user
+    libgames = Library.objects.filter(username=user.id)
 
 
     context = {
-         "numgames": len(libgames)
+        "numgames": len(libgames),
+        "tag": user.username,
+        "userrealname": user.first_name + " " + user.last_name
     }
     return render(request,'players/dashboard.html',context)

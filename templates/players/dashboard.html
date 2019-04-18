@@ -3,23 +3,20 @@
 {% block content %}
 <div class="container">
     <div class="columns">
-        {% include 'partials/_sidebar.html' %}
         <div class="column is-9">
             <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
-                    <li><a href="../">Home</a></li>
-                    <li><a href="../">My Cons</a></li>
-                    <li class="is-active"><a href="#" aria-current="page">Rubicon IV</a></li>
+                    <li><a href="../">Home</a></li>    
                 </ul>
             </nav>
             <section class="hero is-info welcome is-small">
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            Rubicon IV: Wrath of Con
+                            {{ userrealname }}
                         </h1>
                         <h2 class="subtitle">
-                            AKA Exiling Dan Since 2015
+                            AKA {{ tag }}
                         </h2>
                     </div>
                 </div>
@@ -28,32 +25,26 @@
                 <div class="tile is-ancestor has-text-centered">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">3</p>
-                            <p class="subtitle">Games In Progress</p>
+                            <p class="title">{{ numgames }}</p>
+                            <p class="subtitle">Games In Library</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">37</p>
-                            <p class="subtitle">Available Games</p>
+                            <p class="title">0</p>
+                            <p class="subtitle">Cons</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">8</p>
-                            <p class="subtitle">Available Players</p>
+                            <p class="title">0</p>
+                            <p class="subtitle">Friends</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">18</p>
-                            <p class="subtitle">Rounds Played</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">44</p>
-                            <p class="subtitle">Svea Pat Pats</p>
+                            <p class="title">0</p>
+                            <p class="subtitle">Games Played</p>
                         </article>
                     </div>
                 </div>

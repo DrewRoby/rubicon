@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'session',
     'players',
+    'games',
+    'cons',
 
     # Forum software
     'forum',
