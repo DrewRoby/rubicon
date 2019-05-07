@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-from .models import Library
+from .models import Library, PlayerGroup
 from cons.models import Con
 from datetime import datetime as dt
 
@@ -70,14 +70,16 @@ def dashboard(request):
     # if not request.user:
     #     return redirect('login.html')
 
-    # link current user to library
+    # Use get_or_create() to always have the player's private con on first login
     user = request.user
-    libgames = Library.objects.filter(username=user.id)
-
+    libGames = Library.objects.filter(username=user.id)
+    userPGroups = PlayerGroup.objects.filter(username=user.id)#.distinct(P_GROUP_ID)
+    currentCons = Con.objects.filter(P_GROUP_ID__in=userPGroups.P_GROUP_ID)
 
     context = {
-        "numgames": len(libgames),
+        "numgames": len(libGames),
         "tag": user.username,
-        "userrealname": user.first_name + " " + user.last_name
+        "userrealname": user.first_name + " " + user.last_name,
+        "currentcons": currentCons
     }
     return render(request,'players/dashboard.html',context)

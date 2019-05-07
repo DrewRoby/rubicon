@@ -13,12 +13,20 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            {{ userrealname }}
+                            {{ tag }}
                         </h1>
                         <h2 class="subtitle">
-                            AKA {{ tag }}
+                            AKA {{ userrealname }}
                         </h2>
                     </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="level">
+                    <p class="title is-3">Current Cons:</p>
+                    <p class="subtitle is-5">{{ currentcons }}</p>
+                    <p class="title is-3">Upcoming Cons:</p>
+                    <p class="subtitle is-5">{{ upcomingcons }}</p>
                 </div>
             </section>
             <section class="info-tiles">

@@ -17,8 +17,6 @@ from games.models import Game
 
 
 
-# Is this the right place to put the player group?  Or just as good a place as any?
-# Or should I leverage django's built-in groups?
 class PlayerGroup(models.Model):
     PLAYER_P_GROUP_ID = models.CharField(primary_key=True, max_length=500)
     username = models.ForeignKey(User, on_delete=models.PROTECT)

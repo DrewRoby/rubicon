@@ -17,7 +17,9 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 ### Current Worklist
 [Project Plan](https://docs.google.com/document/d/1iyQvx6h56K4sixF306oxCg2OV1IbUly9dNVizWtOdDg/edit?usp=sharing)
 #### Latest Changes
-* 4/15 Application supports multiple users. Postgres now official database.
+* 5/7 Working through process of setting up a con
+* 5/7 Add utilities.py to rubicon module to handle utility functions like adding a con, a game, searching BGG, etc, and keep them all in one place
+* 5/7 Next step: make the createCon() function in utilities.py work, and call based on get_or_create()'s value vis a vis the user's private con (design to always have a default con so that the application doesn't freak out that there's no P_GROUP_ID when trying to run the dashboard view)
 
 #### High Priority
 * Figure out user dashboard: adding games to library, past/upcoming cons, &c.
@@ -32,6 +34,7 @@ I plan to deploy this to a free Heroku instance and keep it up there, so feel fr
 * Redesign data model around [RedisGraph](https://oss.redislabs.com/redisgraph/) or some other graph db? You know, for kicks?
 
 #### Complete
+* 4/15 Application supports multiple users. Postgres now official database.
 * Replace bootstrap with bulma
 * Add routes to app.py for existing templates (or rather, existing nav options)
 * Wire up postgres
