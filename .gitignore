@@ -8,3 +8,4 @@
 local_settings.py
 /static
 __pycache__
+/rubicon_env
