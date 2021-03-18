@@ -1,6 +1,6 @@
 certifi==2019.3.9
 Click==7.0
-Django==2.2.13
+Django==2.2.18
 django-djconfig==0.8.0
 django-haystack==2.8.1
 django-infinite-scroll-pagination==0.2.0
